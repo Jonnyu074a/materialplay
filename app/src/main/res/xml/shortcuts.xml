@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="gaming_mode"
+        android:enabled="true"
+        android:icon="@drawable/ic_tile"
+        android:shortcutShortLabel="@string/shortcut_gaming_short"
+        android:shortcutLongLabel="@string/shortcut_gaming_long">
+        <intent
+            android:action="com.materialplay.launcher.OPEN_GAMING"
+            android:targetPackage="com.materialplay.launcher"
+            android:targetClass="com.materialplay.launcher.gaming.GamingActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mp_background">#0B0D10</color>
+    <color name="mp_accent">#7DE2D1</color>
+    <color name="mp_icon_bg">#0E1116</color>
+</resources>

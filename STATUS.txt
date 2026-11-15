@@ -1,0 +1,89 @@
+MATERIAL PLAY - STATUS SUMMARY (for AI context)
+Generated: 2026-11-15
+App name: Material Play (keep name; ignore "Nexus Play" naming in pasted spec)
+Package: com.materialplay.launcher (debug suffix .debug)
+Repo: /root/projects/MaterialPlay  (git, all changes uncommitted)
+
+== STACK ==
+JDK 17, Gradle 8.10.2, AGP 8.7.3, Kotlin 2.0.21, Compose BOM 2024.10.01,
+Room 2.6.1/KSP, Coil, OkHttp, DataStore, minSdk 26, compile/target 35.
+Single `app` module with package layering. Build:
+  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64
+  export ANDROID_SDK_ROOT=/opt/android-sdk
+  /opt/gradle-8.10.2/bin/gradle :app:assembleDebug
+APK: app/build/outputs/apk/debug/app-debug.apk (~11.6 MB). Last build: SUCCESSFUL.
+
+== COMPLETED (original + this session) ==
+Data layer: Room (games/sessions/controllers), DataStore settings, GameRepository with PackageManager scan,
+metadata providers (RAWG + IGDB text, SteamGridDB art), local image cache, icon fallback, fuzzy title matching.
+Gamepad: InputManager/InputDevice/KeyEvent/MotionEvent detection, semantic PadAction router, stick repeat,
+deadzone, focus rings, Gaming Mode focus state machine, controller profiles/glyphs (Xbox/PS/Nintendo/Generic).
+Gaming Mode: landscape immersive activity, panels (intro/pause/confirm/quick/details), stats, settings rows.
+Auto-open: foreground detection + background monitor service (connectedDevice|specialUse FGS), SYSTEM_ALERT_WINDOW
+fallback + full-screen notification, auto-normal-on-disconnect, disconnect prompt.
+Quick Access overlay (PS5-like) with battery/brightness/volume/clock/session.
+Hidden games flow (Room + chip + restore), favorites, collections not yet.
+Stats: sessions, approximate play time, totals.
+New this session:
+- Settings: AppLanguage, UiScale, LibraryLayout, detectUsb, detectBluetooth enums + fields + persistence.
+- Theme: PlayStation-blue default accent, deep navy palette, smaller corners, LocalDensity UI scaling.
+- MainShell: compact top nav bar (Home/Games/Library/Media/Controllers/Profile/Settings) + status cluster; landscape.
+- HomeScreen: cinematic full-screen artwork backdrop driven by selected cover carousel + info/actions.
+- LibraryScreen: category chips + grid/list/carousel view modes.
+- SettingsScreen: language, UI scale, library layout, USB/BT detection controls.
+- GamingScreen: top tab bar instead of nav rail; handleNav left/right; UI scale/layout/language rows.
+- MainActivity/GamingActivity: attachBaseContext locale from settings; LocalActivity composition local;
+  auto-transition respects detectUsb/detectBluetooth.
+- Localization: values/strings.xml + values-es/strings.xml (tabs + key labels); tab enums use string resources;
+  GamingTopBar/MainShell use stringResource.
+- Manifest: MainActivity sensorLandscape.
+- README updated (partial localization note).
+
+== REMAINING / TODO ==
+1. Full localization: convert remaining hardcoded English strings in Home, Library, Settings, Gaming, Details,
+   Controllers, Stats, Dialogs to stringResource and add ES translations. Currently only tabs + some labels.
+2. Home controller navigation (carousel focus) without touch; Normal Mode D-pad traversal polish.
+3. Collections support in Library (custom collections) - not implemented.
+4. Media tab could be richer (currently lists video/audio categorized apps).
+5. Gaming Mode: verify top tab bar focus/hints wording ("Rail" -> "Tabs").
+6. Stats screen localization and profile header.
+7. Metadata: TheGamesDB not implemented (RAWG+IGDB+SteamGridDB only).
+8. Auto-open from other apps: background activity start restrictions documented; not fully verifiable here.
+9. No device/emulator available for runtime verification (GameSir X5 Lite, controller behavior).
+
+== KEY FILES ==
+app/src/main/java/com/materialplay/launcher/data/settings/AppSettings.kt
+app/src/main/java/com/materialplay/launcher/data/settings/SettingsRepository.kt
+app/src/main/java/com/materialplay/launcher/ui/theme/{Colors,Type,Theme}.kt
+app/src/main/java/com/materialplay/launcher/ui/MainShell.kt
+app/src/main/java/com/materialplay/launcher/ui/HomeScreen.kt
+app/src/main/java/com/materialplay/launcher/ui/LibraryScreen.kt
+app/src/main/java/com/materialplay/launcher/ui/SettingsScreen.kt
+app/src/main/java/com/materialplay/launcher/ui/MediaScreen.kt
+app/src/main/java/com/materialplay/launcher/gaming/GamingScreen.kt
+app/src/main/java/com/materialplay/launcher/MainActivity.kt
+app/src/main/java/com/materialplay/launcher/gaming/GamingActivity.kt
+app/src/main/res/values/strings.xml
+app/src/main/res/values-es/strings.xml
+app/src/main/AndroidManifest.xml
+README.md
+
+== NOTES ==
+- ARM64 aapt2 override is in ~/.gradle/gradle.properties (not committed).
+- No commits made; all changes uncommitted.
+- Limitations documented in README "Known limitations".
+== SESSION: GAMING MODE CINEMATIC REDESIGN (not compiled; no Android SDK in the authoring environment) ==
+- GamingScreen.kt: new Home (square cover carousel anchored left, backdrop artwork, logo, Play/Details buttons,
+  info cards, adaptive to height), new transparent top bar with live tabs + L1/R1 glyphs, compact hint bar using
+  the active glyph profile, square-tile Library, compact Settings rows. Old shortcut tiles removed.
+- Navigation: Home row 0 = carousel, row 1 = Play/Details; UP from the first row returns to the top bar;
+  L1/R1 switch tabs (debounced so the L1+R1 overlay chord does not switch tabs).
+- Density: Theme no longer applies Normal Mode uiScale in Gaming; GamingActivity scales density only
+  (fontScale no longer squared). Library columns use real scaled dp width.
+- Gaming Mode is forced dark and ignores dynamic color.
+- Normal Mode: edge-to-edge + safeDrawing insets, Gaming Mode button in MainShell, HomeScreen carousel label no
+  longer clipped, overlapping top-right buttons and static hint bar removed.
+- Localization (EN/ES) added for Gaming Home/hints/settings/pause/confirm and Normal Home/Library strings.
+- Still English: GamingOverlay.kt (quick/intro/details overlays), ControllersContent, StatsContent, enum labels.
+- Still missing data: Time to beat, Reviews/Metacritic, Achievements (not stored in GameEntity).
+- TODO: verify on device (GameSir X5 Lite): focus ring, carousel anchoring, text fit at Gaming Density 1.15/1.25.

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Material Play</string>
+    <string name="gaming_mode">Modo Gaming</string>
+    <string name="shortcut_gaming_short">Modo Gaming</string>
+    <string name="shortcut_gaming_long">Abrir la biblioteca controlada por mando</string>
+    <string name="monitor_channel_name">Monitor de mandos</string>
+    <string name="monitor_channel_desc">Detecta mandos mientras Material Play está en segundo plano</string>
+    <string name="gaming_channel_name">Modo Gaming</string>
+    <string name="gaming_channel_desc">Alertas de conexión de mando y lanzamiento rápido</string>
+
+    <string name="tab_home">Inicio</string>
+    <string name="tab_games">Juegos</string>
+    <string name="tab_library">Biblioteca</string>
+    <string name="tab_media">Multimedia</string>
+    <string name="tab_pads">Controladores</string>
+    <string name="tab_profile">Perfil</string>
+    <string name="tab_settings">Ajustes</string>
+
+    <string name="no_games_yet">Sin juegos aún</string>
+    <string name="scan_library">Escanear biblioteca</string>
+    <string name="library_empty_body">Material Play lee los juegos que Android reporta como instalados. Vuelve a escanear tras instalar un juego o añade cualquier app manualmente desde la biblioteca.</string>
+    <string name="games_count">%1$d juegos</string>
+    <string name="hidden_count">%1$d ocultos</string>
+    <string name="search_library">Buscar en tu biblioteca</string>
+    <string name="library_empty">La biblioteca está vacía</string>
+    <string name="no_matches">Sin coincidencias</string>
+    <string name="hidden_games_empty">Sin juegos ocultos</string>
+
+    <string name="settings_title">Ajustes</string>
+    <string name="appearance">Apariencia</string>
+    <string name="theme">Tema</string>
+    <string name="language">Idioma</string>
+    <string name="ui_scale">Escala de interfaz</string>
+    <string name="accent">Color de acento</string>
+    <string name="background_style">Estilo de fondo</string>
+    <string name="cover_size">Tamaño de portada</string>
+    <string name="backdrop_blur">Desenfoque de fondo</string>
+    <string name="animations">Animaciones</string>
+    <string name="dynamic_colour">Color dinámico</string>
+
+    <string name="controller_behaviour">Comportamiento del mando</string>
+    <string name="open_gaming_on_connect">Abrir Modo Gaming al conectar</string>
+    <string name="leave_gaming_on_disconnect">Salir del Modo Gaming al desconectar</string>
+    <string name="ask_before_leaving">Preguntar antes de salir</string>
+    <string name="background_monitor">Monitor de mandos en segundo plano</string>
+    <string name="open_from_other_apps">Abrir Modo Gaming desde otras apps</string>
+    <string name="detect_usb">Detectar mandos USB</string>
+    <string name="detect_bluetooth">Detectar mandos Bluetooth</string>
+    <string name="quick_overlay_shortcut">Atajo de menú rápido</string>
+    <string name="glyph_appearance">Apariencia de glifos</string>
+    <string name="button_hints">Pistas de botones</string>
+    <string name="open_gaming_mode">Abrir Modo Gaming</string>
+
+    <string name="library_layout">Diseño de biblioteca</string>
+    <string name="default_sort">Orden predeterminado</string>
+    <string name="ascending_order">Orden ascendente</string>
+    <string name="only_games">Añadir solo juegos automáticamente</string>
+    <string name="rescan_installed">Reescanear apps instaladas</string>
+
+    <string name="media_title">Multimedia</string>
+    <string name="no_media_apps">No se detectaron apps multimedia</string>
+    <string name="media_apps_body">Aquí aparecen las apps categorizadas como video o audio por Android.</string>
+
+    <string name="installed_media_apps">Apps multimedia instaladas</string>
+
+    <!-- Gaming Mode / console UI -->
+    <string name="gm_play">Jugar</string>
+    <string name="gm_played">Jugado %1$s</string>
+    <string name="gm_never_played">Sin jugar aún</string>
+    <string name="gm_rel_today">hoy</string>
+    <string name="gm_rel_yesterday">ayer</string>
+    <string name="gm_rel_days">hace %1$d días</string>
+    <string name="gm_rel_weeks">hace %1$d semanas</string>
+    <string name="gm_rel_months">hace %1$d meses</string>
+    <string name="gm_card_time">Tu tiempo</string>
+    <string name="gm_card_sessions">Sesiones</string>
+    <string name="gm_card_sessions_sub">Lanzamientos registrados</string>
+    <string name="gm_card_storage">Almacenamiento</string>
+    <string name="gm_card_storage_sub">Tamaño instalado</string>
+    <string name="gm_card_info">Juego</string>
+    <string name="gm_two_weeks">+%1$d min en 2 semanas</string>
+    <string name="gm_welcome">Bienvenido al Modo Gaming</string>
+    <string name="gm_welcome_body">Aún no hay juegos en la biblioteca. Escanea las apps instaladas y vuelve aquí para lanzarlas con el mando.</string>
+    <string name="gm_touch_input">Entrada táctil</string>
+    <string name="gm_on">Activado</string>
+    <string name="gm_off">Desactivado</string>
+    <string name="gm_hint_move">Mover</string>
+    <string name="gm_hint_open">Abrir</string>
+    <string name="gm_hint_details">Detalles</string>
+    <string name="gm_hint_favorite">Favorito</string>
+    <string name="gm_hint_select">Seleccionar</string>
+    <string name="gm_hint_close">Cerrar</string>
+    <string name="gm_hint_tabs">Pestañas</string>
+    <string name="gm_hint_pause">Pausa</string>
+    <string name="gm_hint_change">Cambiar</string>
+    <string name="gm_hint_cycle_glyphs">Cambiar glifos</string>
+    <string name="gm_hint_prev_tab">Pest. anterior</string>
+    <string name="gm_hint_next_tab">Pest. siguiente</string>
+    <string name="gm_quick_menu">Menú rápido</string>
+    <string name="gm_density">Densidad de Gaming</string>
+    <string name="gm_rescan_library">Reescanear biblioteca</string>
+    <string name="gm_run_now">Ejecutar ahora</string>
+    <string name="gm_scanning">Escaneando…</string>
+    <string name="gm_open_overlay">Abrir panel</string>
+    <string name="gm_clear_history">Borrar historial de juego</string>
+    <string name="gm_delete_sessions">Eliminar sesiones</string>
+    <string name="gm_clear_title">¿Borrar el historial de juego?</string>
+    <string name="gm_clear_body">Se eliminarán todas las sesiones y totales registrados. Los juegos, favoritos y perfiles de mando se conservan.</string>
+    <string name="gm_clear_confirm">Borrar historial</string>
+    <string name="gm_return_normal">Volver al Modo Normal</string>
+    <string name="gm_touch_launcher">Launcher táctil</string>
+    <string name="gm_paused">En pausa</string>
+    <string name="gm_controller_disconnected">Mando desconectado</string>
+    <string name="gm_disconnected_notice">Mando desconectado. Vuelve a conectarlo o continúa con la pantalla táctil.</string>
+    <string name="gm_resume">Reanudar</string>
+    <string name="gm_exit_gaming">Salir del Modo Gaming</string>
+    <string name="gm_leave_title">¿Salir del Modo Gaming?</string>
+    <string name="gm_leave_body">Se abre el Modo Normal y se cierra la interfaz pensada para mando.</string>
+    <string name="gm_leave">Salir</string>
+    <string name="gm_cancel">Cancelar</string>
+    <string name="gm_confirm">Confirmar</string>
+    <string name="gm_library_empty_body">Abre el Modo Gaming después de escanear las apps instaladas en el Modo Normal.</string>
+    <string name="gm_installed">Instalado</string>
+</resources>
